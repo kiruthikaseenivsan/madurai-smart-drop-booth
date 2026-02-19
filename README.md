@@ -1,29 +1,16 @@
-import time
+# Madurai Smart Drop Booth (MSDB) ♻️
 
-def msdb_process_updated():
-    print("--- MADURAI SMART DROP BOOTH (MSDB) ---")
-    print("Welcome! Please Scan Mobile App OR MSDB Smart Pass.")
-    
-    # User choice: Mobile or Card
-    user_input = input("\n[ACTION] Scan your ID (Type 'SCAN' for Mobile or 'PASS' for Smart Card): ")
-    
-    if user_input.upper() in ["SCAN", "PASS"]:
-        if user_input.upper() == "PASS":
-            print("Reading MSDB Smart Pass... Verified! ✅")
-        else:
-            print("Authenticating Mobile App... Verified! ✅")
-            
-        print("\n[SYSTEM] Opening Deposit Slot... (Motor Actuated)")
-        time.sleep(1)
-        print(">>> SLOT OPEN. Please drop your waste.")
-        
-        weight = float(input("\n[SENSOR] Enter weight (Kg): "))
-        print("\n[SYSTEM] Closing Slot... Calculating Rewards...")
-        
-        points = weight * 10
-        print(f"REWARD: {points} Points added to your account!")
-        print("---------------------------------------")
-    else:
-        print("Invalid Entry. Please try again.")
+MSDB is an automated plastic waste collection system designed to incentivize recycling through a "Deposit & Earn" model. This repository contains the logic simulation for the booth's hardware and software integration.
 
-msdb_process_updated()
+## 🚀 Features
+* **QR Authentication:** Secure user login simulation.
+* **Motor Control Logic:** Simulated actuation of the deposit slot.
+* **AI Validation:** Placeholder for Computer Vision analysis of waste.
+* **Reward System:** Automated "Madurai Coin" calculation based on weight ($Weight \times 10$).
+
+## 🛠️ How to Run
+1. Ensure you have Python installed.
+2. Clone the repo: `git clone https://github.com/YOUR_USERNAME/msdb.git`
+3. Run the script:
+   ```bash
+   python msdb_main.py
