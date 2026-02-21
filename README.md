@@ -1,47 +1,23 @@
-import time
-import random
+# MSDB - Madurai Smart Drop Booth ♻️🔋
 
-class MSDB_SmartSystem:
-    def __init__(self):
-        # Database simulation
-        self.user_db = {"user_01": {"name": "Macha", "points": 100}}
-        self.waste_rates = {"dry": 10, "wet": 5} # Points per kg
+**Madurai Smart Drop Booth (MSDB)** is an IoT-based smart waste management system designed to reward citizens for proper waste segregation.
 
-    def authenticate_user(self):
-        print("\n--- MSDB SMART BOOTH ---")
-        user_id = input("Scan QR / Enter Smart Pass ID: ")
-        if user_id in self.user_db:
-            print(f"Welcome, {self.user_db[user_id]['name']}!")
-            return user_id
-        else:
-            print("Access Denied! Invalid ID.")
-            return None
+## 🚀 Project Overview
+MSDB aims to solve the waste crisis in Madurai by implementing a reward-based system. Users drop waste into designated slots, and based on the weight detected by sensors, they earn points that can be redeemed locally.
 
-    def process_waste(self, user_id):
-        print("\nSelect Waste Type:")
-        print("1. Dry Waste (Plastic, Paper, Bottles)")
-        print("2. Wet Waste (Organic, Food)")
-        choice = input("Enter choice (1/2): ")
+## ✨ Key Features
+- **Dual Slot System:** Separate large slots for Dry and Wet waste.
+- **Smart Authentication:** QR-based user login.
+- **Real-time Reward Logic:** Automated point calculation based on waste weight.
+- **Solar Powered:** Sustainable energy for the entire booth.
+- **Mobility:** Designed as an EV-van model for street-level collection.
 
-        waste_type = "dry" if choice == "1" else "wet"
-        print(f"\nOpening {waste_type.upper()} waste slot... Please drop your waste.")
-        
-        # Simulating Load Cell (Weight Sensor) reading
-        time.sleep(2) 
-        weight = round(random.uniform(0.5, 5.0), 2) # Simulating 0.5kg to 5kg
-        print(f"Weight Detected: {weight} kg")
+## 💻 Tech Stack
+- **Language:** Python 3.x
+- **Hardware Simulation:** (Load Cells, Ultrasonic Sensors mapping)
+- **Concept Design:** 3D Modeling & AI-generated cinematic visualization.
 
-        # Reward Logic
-        earned_points = int(weight * self.waste_rates[waste_type])
-        self.user_db[user_id]['points'] += earned_points
-        
-        print(f"Success! You earned {earned_points} points.")
-        print(f"Total Balance: {self.user_db[user_id]['points']} points.")
-        print("Thank you for keeping Madurai clean!")
-
-# --- Execution ---
-msdb = MSDB_SmartSystem()
-active_user = msdb.authenticate_user()
-
-if active_user:
-    msdb.process_waste(active_user)
+## 🛠️ How to Run the Simulation
+1. Clone the repo:
+   ```bash
+   git clone [https://github.com/your-username/MSDB-SmartBooth.git](https://github.com/your-username/MSDB-SmartBooth.git)
